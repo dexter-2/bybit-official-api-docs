@@ -12,6 +12,8 @@ API authentication and API documentation
 
 [WebSocket data](./websocket.md)
 
+[Enums](./rest_api.md#enum-definitions-1)
+
 [FTP data](https://public.bybit.com)
 
 [Changelog](./CHANGELOG.md)

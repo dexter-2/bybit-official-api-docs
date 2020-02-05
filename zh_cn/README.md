@@ -12,6 +12,8 @@ rest api身份验证及接口信息
 
 [websocket推送](./websocket.md)
 
+[枚举](./rest_api.md#enum-definitions-1)
+
 [FTP 归档](https://public.bybit.com)
 
 [变更历史](./CHANGELOG.md)
