@@ -30,7 +30,7 @@ https://api.bybit.com
 
 * [撤销全部活动委托单](#open-apiordercancelallpost)
 
-* [活动单修改](#open-apiorderreplacepost)
+* [修改活动单](#open-apiorderreplacepost)
 
 * [实时查询活动委托](#v2-private-order)
 
@@ -635,7 +635,7 @@ https://api.bybit.com
 
 -----------
 
-## <span id="open-apiorderreplacepost">修改订单信息</span>
+## <span id="open-apiorderreplacepost">修改活动单</span>
 #### API Function
 
 > 'order_id'和'symbol'是必传字段.'p_r_qty' 和 'p_r_price '分别是你想修改的订单的新的量价信息. 如果这两个字段没填，那么默认不修改.
@@ -664,14 +664,15 @@ https://api.bybit.com
         'ret_code':0   错误码 - 正确,
         'ret_msg':'ok' 错误消息,
         'ext_code':''  ,
-        "result": {
-            "clOrdID": "accdafdsaf"        订单号 
+        'result': {
+            'clOrdID': '89a38056-80f1-45b2-89d3-4d8e3a203a79'        订单号 
         },
         'time_now':'1539778407.210858',    UTC时间戳
         'rate_limit_status': 0,            当前时间区间内(1分钟)该类型接口剩余访问次数
     }
 
 ```
+
 -----------
 
 ## <span id="v2-private-order">实时查询活动委托</span>
@@ -977,6 +978,7 @@ https://api.bybit.com
     }
 
 ```
+
 -----------
 
 
@@ -1013,8 +1015,8 @@ https://api.bybit.com
         'ret_code':0   错误码 - 正确,
         'ret_msg':'ok' 错误消息,
         'ext_code':''  ,
-        "result": {
-            "clOrdID": "accdafdsaf"        订单号 
+        'result': {
+            'clOrdID': '041e523d-2376-42c7-9998-252a5fff9e75'        订单号 
         },
         'time_now':'1539778407.210858',    UTC时间戳
         'rate_limit_status': 0,            当前时间区间内(1分钟)该类型接口剩余访问次数

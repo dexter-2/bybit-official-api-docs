@@ -669,9 +669,9 @@ https://api.bybit.com
     'ret_code':0   //Error code,
     'ret_msg':'ok' //Error message,
     'ext_code':'',
-        "result": {
-            "clOrdID": "accdafdsaf"        //order id 
-        },
+    'result': {
+        'clOrdID': '89a38056-80f1-45b2-89d3-4d8e3a203a79'        //order id 
+    },
     'time_now':'1539778407.210858',    // UTC timestamp
     'rate_limit_status': 0,            // The remaining number of accesses in one minute
 }
@@ -922,6 +922,7 @@ https://api.bybit.com
    }
 
 ```
+
 -----------
 ## <span id="open-apistop-ordercancelallpost">Cancel All Conditional Orders</span>
 #### API Function
@@ -1020,9 +1021,9 @@ https://api.bybit.com
     'ret_code':0   //Error code,
     'ret_msg':'ok' //Error message,
     'ext_code':'',
-        "result": {
-            "clOrdID": "accdafdsaf"        //order id 
-        },
+    'result': {
+        'clOrdID': '041e523d-2376-42c7-9998-252a5fff9e75'        //order id 
+    },
     'time_now':'1539778407.210858',    // UTC timestamp
     'rate_limit_status': 0,            // The remaining number of accesses in one minute
 }
