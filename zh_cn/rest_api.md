@@ -664,7 +664,9 @@ https://api.bybit.com
         'ret_code':0   错误码 - 正确,
         'ret_msg':'ok' 错误消息,
         'ext_code':''  ,
-        'result': 'ok',
+        "result": {
+            "clOrdID": "accdafdsaf"        订单号 
+        },
         'time_now':'1539778407.210858',    UTC时间戳
         'rate_limit_status': 0,            当前时间区间内(1分钟)该类型接口剩余访问次数
     }
@@ -1011,7 +1013,9 @@ https://api.bybit.com
         'ret_code':0   错误码 - 正确,
         'ret_msg':'ok' 错误消息,
         'ext_code':''  ,
-        'result':'ok' ,
+        "result": {
+            "clOrdID": "accdafdsaf"        订单号 
+        },
         'time_now':'1539778407.210858',    UTC时间戳
         'rate_limit_status': 0,            当前时间区间内(1分钟)该类型接口剩余访问次数
     }

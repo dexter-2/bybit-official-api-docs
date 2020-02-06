@@ -665,11 +665,13 @@ https://api.bybit.com
 
 ```js
 
-{
+    {
     'ret_code':0   //Error code,
     'ret_msg':'ok' //Error message,
     'ext_code':'',
-    'result':'ok'
+        "result": {
+            "clOrdID": "accdafdsaf"        //order id 
+        },
     'time_now':'1539778407.210858',    // UTC timestamp
     'rate_limit_status': 0,            // The remaining number of accesses in one minute
 }
@@ -1014,11 +1016,13 @@ https://api.bybit.com
 
 ```js
 
-{
+    {
     'ret_code':0   //Error code,
     'ret_msg':'ok' //Error message,
     'ext_code':'',
-    'result':'ok'
+        "result": {
+            "clOrdID": "accdafdsaf"        //order id 
+        },
     'time_now':'1539778407.210858',    // UTC timestamp
     'rate_limit_status': 0,            // The remaining number of accesses in one minute
 }
