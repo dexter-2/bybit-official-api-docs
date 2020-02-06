@@ -1518,7 +1518,7 @@ https://api.bybit.com
 |:----- |:-------|:-----|----- |
 |coin |true |BTC,EOS,ERP,ETH,USDT |alias |
 
-#### 返回示例
+#### Response example
 
 ```js
 
@@ -1531,7 +1531,7 @@ https://api.bybit.com
         "BTC": {
             "equity": 1002,                         //equity = wallet_balance + unrealised_pnl
             "available_balance": 999.99987471,      
-            //可用余额： 
+            //available_balance： 
             //In Isolated Margin Mode， available_balance = wallet_balance - (position_margin + occ_closing_fee + occ_funding_fee + order_margin)
             //In Cross Margin Mode，if unrealised_pnl > 0, available_balance = wallet_balance - (position_margin + occ_closing_fee + occ_funding_fee + order_margin)；otherwise，available_balance = wallet_balance - (position_margin + occ_closing_fee + occ_funding_fee + order_margin) + unrealised_pnl 
             "used_margin": 0.00012529,              //used_margin = wallet_balance - available_balance
