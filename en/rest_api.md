@@ -1516,7 +1516,7 @@ https://api.bybit.com
 
 |parameter|required|type|comments|
 |:----- |:-------|:-----|----- |
-|coin |true |BTC,EOS,ERP,ETH,USDT |alias |
+|coin |true |BTC,EOS,ERP,ETH,USDT |coin |
 
 #### Response example
 
