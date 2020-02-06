@@ -1676,8 +1676,8 @@ https://api.bybit.com
             "realised_pnl": 0,                      //已结盈亏
             "unrealised_pnl": 2,                    
             //未结盈亏: 
-            //  如果方向为sell, 结果为 仓位数量 * (1.0 / 标记价格 -  1.0 / 开仓价格）
-            //  如果方向为buy,  结果为 仓位数量 * (1.0 / 开仓价格 -  1.0 / 标记价格）
+            //  如果方向为sell, unrealised_pnl = 仓位数量 * (1.0 / 标记价格 -  1.0 / 开仓价格）
+            //  如果方向为buy,  unrealised_pnl = 仓位数量 * (1.0 / 开仓价格 -  1.0 / 标记价格）
             "cum_realised_pnl": 0,                  //总累计已结盈亏
             "given_cash": 0,                        //体验金
             "service_cash": 0                       //抵扣金

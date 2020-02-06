@@ -1537,13 +1537,13 @@ https://api.bybit.com
             "used_margin": 0.00012529,              //used_margin = wallet_balance - available_balance
             "order_margin": 0.00012529,             //Used margin by order
             "position_margin": 0,                   //position margin
-            "occ_closing_fee": 0,                   //position closing
+            "occ_closing_fee": 0,                   //position closing fee
             "occ_funding_fee": 0,                   //funding fee
             "wallet_balance": 1000,                 //wallet balance. When in Cross Margin mod, the number minus your unclosed loss is your real wallet balance.
             "realised_pnl": 0,                      //daily realized profit and loss
             "unrealised_pnl": 2,                    //unrealised profit and loss: 
-                //  when side is sell, result is size * (1.0 / mark_price -  1.0 / entry_price）
-                //  when side is buy,  result is size * (1.0 / entry_price -  1.0 / mark_price）
+                //  when side is sell, unrealised_pnl = size * (1.0 / mark_price -  1.0 / entry_price）
+                //  when side is buy,  unrealised_pnl = size * (1.0 / entry_price -  1.0 / mark_price）
             "cum_realised_pnl": 0,                  //total relised profit and loss
             "given_cash": 0,                        //given_cash
             "service_cash": 0                       //service_cash
