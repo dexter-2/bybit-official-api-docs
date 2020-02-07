@@ -242,7 +242,7 @@ https://api.bybit.com
 
 >Order quantity: This parameter indicates the quantity of perpetual contracts you want to buy or sell, currently Bybit only support order quantity in an integer.
 
->Order price: This parameter indicates the price of perpetual contracts you want to buy or sell, currently Bybit only support price increment of every 0.5.
+>Order price: This parameter indicates the price of perpetual contracts you want to buy or sell, you can get price increment by [Query symbols endpoint](https://bybit-exchange.github.io/bybit-official-api-docs/en/index.html#operation/query_symbol)
 
 >Customize conditional order ID: You may customize order IDs for active orders. We will link it to the system order ID , and return the unique system order ID to you after the active order is created successfully. You may use this order ID to cancel your active order. The customized order ID is asked to be unique, with a maximum length of 36 characters.
 
@@ -325,7 +325,7 @@ https://api.bybit.com
 
 >Order quantity: This parameter indicates the quantity of perpetual contracts you want to buy or sell, currently Bybit only support order quantity in an integer.
 
->Order price: This parameter indicates the price of perpetual contracts you want to buy or sell, currently Bybit only support price increment of every 0.5.
+>Order price: This parameter indicates the price of perpetual contracts you want to buy or sell, you can get price increment by [Query symbols endpoint](https://bybit-exchange.github.io/bybit-official-api-docs/en/index.html#operation/query_symbol).
 
 >Customize conditional order ID: You may customize order IDs for active orders. We will link it to the system order ID , and return the unique system order ID to you after the active order is created successfully. You may use this order ID to cancel your active order. The customized order ID is asked to be unique, with a maximum length of 36 characters.
 
@@ -749,7 +749,7 @@ https://api.bybit.com
 
 >Order quantity: This parameter indicates the quantity of perpetual contracts you want to buy or sell, currently Bybit only support order quantity in an integer.
 
->Order price: This parameter indicates the price of perpetual contracts you want to buy or sell, currently Bybit only support price increment of every 0.5.
+>Order price: This parameter indicates the price of perpetual contracts you want to buy or sell, you can get price increment by [Query symbols endpoint](https://bybit-exchange.github.io/bybit-official-api-docs/en/index.html#operation/query_symbol).
 
 >Conditional order trigger price: You may set a trigger price for your conditional order. conditional order will not enter the order book until the last price hits the trigger price. When last price hits trigger price: 1) your limit conditional order will enter order book, and wait to be executed; 2) your market conditional order will be executed immediately at the best available market price.
 
