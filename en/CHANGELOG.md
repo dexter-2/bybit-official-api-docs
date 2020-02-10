@@ -1,5 +1,16 @@
 <hr>
 
+## 2020-02-10
+
+### REST API
+- [Replace order](./rest_api.md#open-apiorderreplacepost) [update]
+    - Add `order_id` in response
+- [Replace conditional order](./rest_api.md#open-apistop-orderreplacepost) [update]
+    - Add `stop_order_id` in response
+    - Add a new request parameter `stop_order_id` to replace `order_id` for consistency
+
+<hr>
+
 ## 2019-12-27
 
 ### REST API

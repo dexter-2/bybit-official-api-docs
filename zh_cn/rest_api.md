@@ -638,7 +638,7 @@ https://api.bybit.com
 ## <span id="open-apiorderreplacepost">修改活动单</span>
 #### API Function
 
-> 'order_id'和'symbol'是必传字段.'p_r_qty' 和 'p_r_price '分别是你想修改的订单的新的量价信息. 如果这两个字段没填，那么默认不修改.
+> 'p_r_qty' 和 'p_r_price '分别是你想修改的订单的新的量价信息. 如果这两个字段没填，那么默认不修改.
 
 > 请注意，只有未成交或未完全成交的订单才可以被修改。
 
@@ -665,7 +665,7 @@ https://api.bybit.com
         'ret_msg':'ok' 错误消息,
         'ext_code':''  ,
         'result': {
-            'clOrdID': '89a38056-80f1-45b2-89d3-4d8e3a203a79'        订单号 
+            'order_id':'89a38056-80f1-45b2-89d3-4d8e3a203a79'
         },
         'time_now':'1539778407.210858',    UTC时间戳
         'rate_limit_status': 0,            当前时间区间内(1分钟)该类型接口剩余访问次数
@@ -985,9 +985,9 @@ https://api.bybit.com
 ## <span id="open-apistop-orderreplacepost">修改条件委托单 </span>
 #### 接口功能
 
-> 修改活跃的条件单.
+> 修改未触发的条件单.
 
-> 'order_id' 和 'symbol' 两个字段必输.'p_r_qty', 'p_r_price '和'p_r_trigger_price'这三个字段为修改后的条件单量价信息,以及触发价格. 如果不填则默认不会修改.
+> 'p_r_qty', 'p_r_price '和'p_r_trigger_price'这三个字段为修改后的条件单量价信息,以及触发价格. 如果不填则默认不会修改.
 
 > 请注意，只有未触发的条件单才能被修改。
 
@@ -1000,7 +1000,8 @@ https://api.bybit.com
 
 |参数|必选|类型|说明|
 |:----- |:-------|:-----|----- |
-|order_id |true |string |需要被修改的订单ID |
+|order_id |true |string |**废弃！** 请使用`stop_order_id` |
+|stop_order_id |true |string |需要被修改的条件单订单ID |
 |symbol |true |string |合约种类. |
 |p_r_qty |false |int | 修改后的条件单的量|
 |p_r_price |false |number | 修改后的条件单的价格 |
@@ -1015,9 +1016,9 @@ https://api.bybit.com
         'ret_code':0   错误码 - 正确,
         'ret_msg':'ok' 错误消息,
         'ext_code':''  ,
-        'result': {
-            'clOrdID': '041e523d-2376-42c7-9998-252a5fff9e75'        订单号 
-        },
+        'result':{
+            'stop_order_id':'041e523d-2376-42c7-9998-252a5fff9e75'
+        } ,
         'time_now':'1539778407.210858',    UTC时间戳
         'rate_limit_status': 0,            当前时间区间内(1分钟)该类型接口剩余访问次数
     }
