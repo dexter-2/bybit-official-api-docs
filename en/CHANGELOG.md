@@ -9,6 +9,7 @@
 - [Replace conditional order](./rest_api.md#open-apistop-orderreplacepost) [update]
     - Add `stop_order_id` in response
     - Add a new request parameter `stop_order_id` to replace `order_id` for consistency
+- Fix value of `rate_limit_reset_ms` in V2 private endpoints' response from `microseconds` to `millisecond`, be consistent with V1 endpoint [bugfix]
 
 <hr>
 

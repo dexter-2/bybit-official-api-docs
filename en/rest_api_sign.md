@@ -17,7 +17,7 @@
 Every request to the API returns the following fields:
 ```
 "rate_limit_status":119,
-"rate_limit_reset_ms":1572114055663815,
+"rate_limit_reset_ms":1572114055663,
 "rate_limit":120
 ```
 * `rate_limit_status` - remaining requests

@@ -17,7 +17,7 @@
 每个接口，都会返回如下字段：
 ```
 "rate_limit_status":119,
-"rate_limit_reset_ms":1572114055663815,
+"rate_limit_reset_ms":1572114055663,
 "rate_limit":120
 ```
 * rate_limit 你当前的频率限制；
