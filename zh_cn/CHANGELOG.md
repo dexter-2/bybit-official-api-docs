@@ -1,5 +1,12 @@
 <hr>
 
+## 2020-02-10
+
+### REST API
+- [查询用户资产](./rest_api.md#open-apiwalletbalanceget) [新增]
+
+<hr>
+
 ## 2019-12-27
 
 ### REST API
