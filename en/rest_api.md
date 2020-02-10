@@ -667,11 +667,13 @@ https://api.bybit.com
 
 ```js
 
-{
+    {
     'ret_code':0   //Error code,
     'ret_msg':'ok' //Error message,
     'ext_code':'',
-    'result':'ok'
+    'result':{
+      'order_id': '89a38056-80f1-45b2-89d3-4d8e3a203a79'
+    },
     'time_now':'1539778407.210858',    // UTC timestamp
     'rate_limit_status': 0,            // The remaining number of accesses in one minute
 }
@@ -922,6 +924,7 @@ https://api.bybit.com
    }
 
 ```
+
 -----------
 ## <span id="open-apistop-ordercancelallpost">Cancel All Conditional Orders</span>
 #### API Function
@@ -992,7 +995,7 @@ https://api.bybit.com
 
 > Replace conditional order can modify your conditional order.
 
-> 'order_id','symbol' is required for finding an active order.'p_r_qty', 'p_r_price' and 'p_r_trigger_price' will be set to your new conditional order. If these fields are not provided, nothing will be modified.
+> 'p_r_qty', 'p_r_price' and 'p_r_trigger_price' will be set to your new conditional order. If these fields are not provided, nothing will be modified.
 
 > Please note that you can only modify untriggered conditional order.
 
@@ -1006,7 +1009,8 @@ https://api.bybit.com
 
 |parameters|required|type|comments|
 |:----- |:-------|:-----|----- |
-|order_id |true |string |Your active order ID. The unique order ID returned to you when the corresponding active order was created |
+|order_id |true |string |**Abandoned!** Alias for `stop_order_id` |
+|stop_order_id |true |string |Your stop order ID. The unique order ID returned to you when the corresponding conditional order was created |
 |symbol |true |string |Contract type. |
 |p_r_qty |false |int |New conditional order's quantity |
 |p_r_price |false |number |New conditional order's price |
@@ -1016,11 +1020,13 @@ https://api.bybit.com
 
 ```js
 
-{
+    {
     'ret_code':0   //Error code,
     'ret_msg':'ok' //Error message,
     'ext_code':'',
-    'result':'ok'
+    'result':{
+      'stop_order_id':'041e523d-2376-42c7-9998-252a5fff9e75'
+    },
     'time_now':'1539778407.210858',    // UTC timestamp
     'rate_limit_status': 0,            // The remaining number of accesses in one minute
 }

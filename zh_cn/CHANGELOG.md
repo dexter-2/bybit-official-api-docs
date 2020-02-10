@@ -4,6 +4,11 @@
 
 ### REST API
 - [查询用户资产](./rest_api.md#open-apiwalletbalanceget) [新增]
+- [修改活动委托单](./rest_api.md#apiorderreplacepost) [修改]
+    - 返回结果中增加 `order_id`
+- [修改条件委托单](./rest_api.md#open-apistop-orderreplacepost) [修改]
+    - 返回结果中增加 `stop_order_id`
+    - 为了和其他接口保持统一，新增请求参数 `stop_order_id`，替换调原来的参数 `order_id`
 
 <hr>
 
