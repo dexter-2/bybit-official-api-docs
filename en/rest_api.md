@@ -67,6 +67,8 @@ https://api.bybit.com
 
 * [Get Withdraw records](#wallet-withdrawrecordget)
 
+* [Get Account Balance](#open-apiwalletbalanceget)
+
 * [Set risk limit](#wallet-setrisklimit)
 
 * [Get risk limit list](#wallet-getrisklimit)
@@ -242,7 +244,7 @@ https://api.bybit.com
 
 >Order quantity: This parameter indicates the quantity of perpetual contracts you want to buy or sell, currently Bybit only support order quantity in an integer.
 
->Order price: This parameter indicates the price of perpetual contracts you want to buy or sell, currently Bybit only support price increment of every 0.5.
+>Order price: This parameter indicates the price of perpetual contracts you want to buy or sell, you can get price increment by [Query symbols endpoint](https://bybit-exchange.github.io/bybit-official-api-docs/en/index.html#operation/query_symbol)
 
 >Customize conditional order ID: You may customize order IDs for active orders. We will link it to the system order ID , and return the unique system order ID to you after the active order is created successfully. You may use this order ID to cancel your active order. The customized order ID is asked to be unique, with a maximum length of 36 characters.
 
@@ -325,7 +327,7 @@ https://api.bybit.com
 
 >Order quantity: This parameter indicates the quantity of perpetual contracts you want to buy or sell, currently Bybit only support order quantity in an integer.
 
->Order price: This parameter indicates the price of perpetual contracts you want to buy or sell, currently Bybit only support price increment of every 0.5.
+>Order price: This parameter indicates the price of perpetual contracts you want to buy or sell, you can get price increment by [Query symbols endpoint](https://bybit-exchange.github.io/bybit-official-api-docs/en/index.html#operation/query_symbol).
 
 >Customize conditional order ID: You may customize order IDs for active orders. We will link it to the system order ID , and return the unique system order ID to you after the active order is created successfully. You may use this order ID to cancel your active order. The customized order ID is asked to be unique, with a maximum length of 36 characters.
 
@@ -751,7 +753,7 @@ https://api.bybit.com
 
 >Order quantity: This parameter indicates the quantity of perpetual contracts you want to buy or sell, currently Bybit only support order quantity in an integer.
 
->Order price: This parameter indicates the price of perpetual contracts you want to buy or sell, currently Bybit only support price increment of every 0.5.
+>Order price: This parameter indicates the price of perpetual contracts you want to buy or sell, you can get price increment by [Query symbols endpoint](https://bybit-exchange.github.io/bybit-official-api-docs/en/index.html#operation/query_symbol).
 
 >Conditional order trigger price: You may set a trigger price for your conditional order. conditional order will not enter the order book until the last price hits the trigger price. When last price hits trigger price: 1) your limit conditional order will enter order book, and wait to be executed; 2) your market conditional order will be executed immediately at the best available market price.
 
@@ -1503,6 +1505,60 @@ https://api.bybit.com
 }
 
 ```
+
+
+
+## <span id="open-apiwalletbalanceget">Get Wallet Balance </span>
+#### API Function
+
+> get wallet balance info
+
+#### HTTP Request
+
+##### Method
+> GET   /v2/private/wallet/balance
+
+#### Request Parameters
+
+|parameter|required|type|comments|
+|:----- |:-------|:-----|----- |
+|coin |true |BTC,EOS,ERP,ETH,USDT |coin |
+
+#### Response example
+
+```js
+
+{
+    "ret_code": 0,
+    "ret_msg": "OK",
+    "ext_code": "",
+    "ext_info": "",
+    "result": {
+        "BTC": {
+            "equity": 1002,                         //equity = wallet_balance + unrealised_pnl
+            "available_balance": 999.99987471,      //available_balance
+            //In Isolated Margin Mode， available_balance = wallet_balance - (position_margin + occ_closing_fee + occ_funding_fee + order_margin)
+            //In Cross Margin Mode，if unrealised_pnl > 0, available_balance = wallet_balance - (position_margin + occ_closing_fee + occ_funding_fee + order_margin)；otherwise，available_balance = wallet_balance - (position_margin + occ_closing_fee + occ_funding_fee + order_margin) + unrealised_pnl 
+            "used_margin": 0.00012529,              //used_margin = wallet_balance - available_balance
+            "order_margin": 0.00012529,             //Used margin by order
+            "position_margin": 0,                   //position margin
+            "occ_closing_fee": 0,                   //position closing fee
+            "occ_funding_fee": 0,                   //funding fee
+            "wallet_balance": 1000,                 //wallet balance. When in Cross Margin mod, the number minus your unclosed loss is your real wallet balance.
+            "realised_pnl": 0,                      //daily realized profit and loss
+            "unrealised_pnl": 2,                    //unrealised profit and loss
+                //  when side is sell, unrealised_pnl = size * (1.0 / mark_price -  1.0 / entry_price）
+                //  when side is buy,  unrealised_pnl = size * (1.0 / entry_price -  1.0 / mark_price）
+            "cum_realised_pnl": 0,                  //total relised profit and loss
+            "given_cash": 0,                        //given_cash
+            "service_cash": 0                       //service_cash
+        }
+    },
+    "time_now": "1578284274.816029"
+}
+
+```
+
 
 -----------
 ## <span id="wallet-setrisklimit">Set risk limit </span>

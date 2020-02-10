@@ -68,6 +68,8 @@ https://api.bybit.com
 
 * [获取出金记录](#wallet-withdrawrecordget)
 
+* [查询用户资产](#open-apiwalletbalanceget)
+
 * [设置风险限额](#wallet-setrisklimit)
 
 * [查询风险限额表](#wallet-getrisklimit)
@@ -227,6 +229,7 @@ https://api.bybit.com
     }
 
 ```
+
 -----------
 ## <span id="open-apiordercreatepost">创建活动委托单 </span>
 #### 接口功能
@@ -240,7 +243,7 @@ https://api.bybit.com
 
 > 委托数量: 表示您要购买/卖出的永续合约数，对于委托数量目前Bybit只允许提交正整数。
 
-> 委托价格: 表示您期望购买/卖出永续合约的价格，对于委托价格目前Bybit只允许提交以0.5为增幅的正数。
+> 委托价格: 表示您期望购买/卖出永续合约的价格，可以根据[交易对接口](https://bybit-exchange.github.io/bybit-official-api-docs/en/index.html#operation/query_symbol)查询不同symbol价格阶梯。
 
 > 自定义条件单ID: 您可以自定义活动委托订单ID，我们会为您关联到系统的订单ID，并把系统的唯一订单ID在活动委托创建成功后一并返回给您，您可以使用该订单ID去取消活动委托，同时要求您传递的自定义订单ID最大长度不超过36个字段且唯一。
 
@@ -321,7 +324,7 @@ https://api.bybit.com
 
 > 委托数量: 表示您要购买/卖出的永续合约数，对于委托数量目前Bybit只允许提交正整数。
 
-> 委托价格: 表示您期望购买/卖出永续合约的价格，对于委托价格目前Bybit只允许提交以0.5为增幅的正数。
+> 委托价格: 表示您期望购买/卖出永续合约的价格，可以根据[交易对接口](https://bybit-exchange.github.io/bybit-official-api-docs/en/index.html#operation/query_symbol)查询不同symbol价格阶梯。
 
 > 自定义条件单ID: 您可以自定义活动委托订单ID，我们会为您关联到系统的订单ID，并把系统的唯一订单ID在活动委托创建成功后一并返回给您，您可以使用该订单ID去取消活动委托，同时要求您传递的自定义订单ID最大长度不超过36个字段且唯一。
 
@@ -744,7 +747,7 @@ https://api.bybit.com
 
 委托数量: 表示您要购买/卖出的永续合约数，对于委托数量目前Bybit只允许提交正整数。
 
-委托价格: 表示您期望购买/卖出永续合约的价格，对于委托价格目前Bybit只允许提交以0.5为增幅的正数。
+委托价格: 表示您期望购买/卖出永续合约的价格，可以根据[交易对接口](https://bybit-exchange.github.io/bybit-official-api-docs/en/index.html#operation/query_symbol)查询不同symbol价格阶梯。
 
 条件委托触发价格: 您可以为您的条件委托单设置一个触发价格，条件委托单不进入委托表（Order Book)，只有触发条件成立如市场价格到达触发价格时，条件委托单才会进入交易系统。当市场价格到达触发价格：1）您的限价条件委托单进入Order Book，等待被执行；2）您的市价条件委托单将按照市场最优价格立即被执行。
 
@@ -1639,6 +1642,60 @@ https://api.bybit.com
 }
 
 ```
+
+## <span id="open-apiwalletbalanceget">查询用户资产 </span>
+#### 接口功能
+
+> 获取用户资产信息。
+
+#### HTTP请求方式
+
+##### 方法
+> GET   /v2/private/wallet/balance
+
+#### 请求参数
+
+|参数|必选|类型|说明|
+|:----- |:-------|:-----|----- |
+|coin |true |BTC,EOS,ERP,ETH,USDT |币种 |
+
+#### 返回示例
+
+```js
+
+{
+    "ret_code": 0,
+    "ret_msg": "OK",
+    "ext_code": "",
+    "ext_info": "",
+    "result": {
+        "BTC": {
+            "equity": 1002,                         //资产净值，equity = wallet_balance + unrealised_pnl
+            "available_balance": 999.99987471,      //可用余额
+            //逐仓模式下， available_balance = wallet_balance - (position_margin + occ_closing_fee + occ_funding_fee + order_margin)
+            //全仓模式下，
+            //如果unrealised_pnl大于0, available_balance = wallet_balance - (position_margin + occ_closing_fee + occ_funding_fee + order_margin)；
+            //否则，available_balance = wallet_balance - (position_margin + occ_closing_fee + occ_funding_fee + order_margin) + unrealised_pnl 
+            "used_margin": 0.00012529,              //已用保证金, used_margin = wallet_balance - available_balance
+            "order_margin": 0.00012529,             //委托保证金
+            "position_margin": 0,                   //仓位保证金
+            "occ_closing_fee": 0,                   //平仓手续费
+            "occ_funding_fee": 0,                   //预占用资金费用
+            "wallet_balance": 1000,                 //钱包余额
+            "realised_pnl": 0,                      //已结盈亏
+            "unrealised_pnl": 2,                    //未结盈亏
+            //  如果方向为sell, unrealised_pnl = size * (1.0 / mark_price -  1.0 / entry_price）
+            //  如果方向为buy, unrealised_pnl = size * (1.0 / entry_price -  1.0 / mark_price）
+            "cum_realised_pnl": 0,                  //总累计已结盈亏
+            "given_cash": 0,                        //体验金
+            "service_cash": 0                       //抵扣金
+        }
+    },
+    "time_now": "1578284274.816029"
+}
+
+```
+
 
 -----------
 ## <span id="wallet-setrisklimit">设置风险限额 </span>

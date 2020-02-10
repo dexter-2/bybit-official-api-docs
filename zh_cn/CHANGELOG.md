@@ -3,6 +3,7 @@
 ## 2020-02-10
 
 ### REST API
+- [查询用户资产](./rest_api.md#open-apiwalletbalanceget) [新增]
 - [修改活动委托单](./rest_api.md#apiorderreplacepost) [修改]
     - 返回结果中增加 `order_id`
 - [修改条件委托单](./rest_api.md#open-apistop-orderreplacepost) [修改]
