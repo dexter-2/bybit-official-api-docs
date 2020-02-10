@@ -229,6 +229,7 @@ https://api.bybit.com
     }
 
 ```
+
 -----------
 ## <span id="open-apiordercreatepost">创建活动委托单 </span>
 #### 接口功能
@@ -1662,22 +1663,22 @@ https://api.bybit.com
     "ext_info": "",
     "result": {
         "BTC": {
-            "equity": 1002,                         //资产净值 = 钱包余额 + 未结盈亏
-            "available_balance": 999.99987471,      
-            //可用余额： 
-            //逐仓模式下， 可用余额 = 钱包余额 - (仓位保证金 + 平仓手续费 + 预占用资金费用 + 委托预占用保证金)
-            //全仓模式下，如果未结盈亏大于0, 可用余额 = 钱包余额 - (仓位保证金 + 平仓手续费 + 预占用资金费用 + 委托预占用保证金)；否则，可用余额 = 钱包余额 - (仓位保证金 + 平仓手续费 + 预占用资金费用 + 委托预占用保证金) + 未结盈亏 
-            "used_margin": 0.00012529,              //已用保证金 = 钱包余额 - 可用余额
+            "equity": 1002,                         //资产净值，equity = wallet_balance + unrealised_pnl
+            "available_balance": 999.99987471,      //可用余额
+            //逐仓模式下， available_balance = wallet_balance - (position_margin + occ_closing_fee + occ_funding_fee + order_margin)
+            //全仓模式下，
+            //如果unrealised_pnl大于0, available_balance = wallet_balance - (position_margin + occ_closing_fee + occ_funding_fee + order_margin)；
+            //否则，available_balance = wallet_balance - (position_margin + occ_closing_fee + occ_funding_fee + order_margin) + unrealised_pnl 
+            "used_margin": 0.00012529,              //已用保证金, used_margin = wallet_balance - available_balance
             "order_margin": 0.00012529,             //委托保证金
             "position_margin": 0,                   //仓位保证金
             "occ_closing_fee": 0,                   //平仓手续费
             "occ_funding_fee": 0,                   //预占用资金费用
             "wallet_balance": 1000,                 //钱包余额
             "realised_pnl": 0,                      //已结盈亏
-            "unrealised_pnl": 2,                    
-            //未结盈亏: 
-            //  如果方向为sell, unrealised_pnl = 仓位数量 * (1.0 / 标记价格 -  1.0 / 开仓价格）
-            //  如果方向为buy,  unrealised_pnl = 仓位数量 * (1.0 / 开仓价格 -  1.0 / 标记价格）
+            "unrealised_pnl": 2,                    //未结盈亏
+            //  如果方向为sell, unrealised_pnl = size * (1.0 / mark_price -  1.0 / entry_price）
+            //  如果方向为buy, unrealised_pnl = size * (1.0 / entry_price -  1.0 / mark_price）
             "cum_realised_pnl": 0,                  //总累计已结盈亏
             "given_cash": 0,                        //体验金
             "service_cash": 0                       //抵扣金

@@ -1530,8 +1530,7 @@ https://api.bybit.com
     "result": {
         "BTC": {
             "equity": 1002,                         //equity = wallet_balance + unrealised_pnl
-            "available_balance": 999.99987471,      
-            //available_balance： 
+            "available_balance": 999.99987471,      //available_balance
             //In Isolated Margin Mode， available_balance = wallet_balance - (position_margin + occ_closing_fee + occ_funding_fee + order_margin)
             //In Cross Margin Mode，if unrealised_pnl > 0, available_balance = wallet_balance - (position_margin + occ_closing_fee + occ_funding_fee + order_margin)；otherwise，available_balance = wallet_balance - (position_margin + occ_closing_fee + occ_funding_fee + order_margin) + unrealised_pnl 
             "used_margin": 0.00012529,              //used_margin = wallet_balance - available_balance
@@ -1541,7 +1540,7 @@ https://api.bybit.com
             "occ_funding_fee": 0,                   //funding fee
             "wallet_balance": 1000,                 //wallet balance. When in Cross Margin mod, the number minus your unclosed loss is your real wallet balance.
             "realised_pnl": 0,                      //daily realized profit and loss
-            "unrealised_pnl": 2,                    //unrealised profit and loss: 
+            "unrealised_pnl": 2,                    //unrealised profit and loss
                 //  when side is sell, unrealised_pnl = size * (1.0 / mark_price -  1.0 / entry_price）
                 //  when side is buy,  unrealised_pnl = size * (1.0 / entry_price -  1.0 / mark_price）
             "cum_realised_pnl": 0,                  //total relised profit and loss

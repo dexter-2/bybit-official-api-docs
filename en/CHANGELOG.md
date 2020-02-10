@@ -1,5 +1,12 @@
 <hr>
 
+## 2020-02-10
+
+### REST API
+- [Get Wallet Balance](./rest_api.md#open-apiwalletbalanceget) [new]
+
+<hr>
+
 ## 2019-12-27
 
 ### REST API
