@@ -22,7 +22,7 @@ https://api.bybit.com
 
 * [创建活动委托单-v2](#open-apiordercreatev2post)
 
-* [查询活动委托](#open-apiorderlistget)
+* [查询活动委托单](#open-apiorderlistget)
 
 * ~~[撤销活动委托单](#open-apiordercancelpost)~~  ----推荐使用V2版本
 
@@ -30,15 +30,15 @@ https://api.bybit.com
 
 * [撤销全部活动委托单](#open-apiordercancelallpost)
 
-* [修改活动单](#open-apiorderreplacepost)
+* [修改活动委托单](#open-apiorderreplacepost)
 
-* [实时查询活动委托](#v2-private-order)
+* [实时查询活动委托单](#v2-private-order)
 
 ### 条件委托单
 
 * [创建条件委托单](#open-apistop-ordercreatepost)
 
-* [查询条件委托](#open-apistop-orderlistget)
+* [查询条件委托单](#open-apistop-orderlistget)
 
 * [撤消条件委托单](#open-apistop-ordercancelpost)
 
@@ -390,7 +390,7 @@ https://api.bybit.com
 ```
 
 -----------
-## <span id="open-apiorderlistget">查询活动委托 </span>
+## <span id="open-apiorderlistget">查询活动委托单 </span>
 #### 接口功能
 
 > 获取我的活动委托单列表。
@@ -675,7 +675,7 @@ https://api.bybit.com
 
 -----------
 
-## <span id="v2-private-order">实时查询活动委托</span>
+## <span id="v2-private-order">实时查询活动委托单</span>
 #### API Function
 
 > 实时查询活动委托
@@ -805,7 +805,7 @@ https://api.bybit.com
 ```
 
 -----------
-## <span id="open-apistop-orderlistget">查询条件委托 </span>
+## <span id="open-apistop-orderlistget">查询条件委托单 </span>
 #### 接口功能
 
 > 获取我的条件委托单列表。
