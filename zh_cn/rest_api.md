@@ -386,7 +386,7 @@ https://api.bybit.com
         },
         "time_now": "1575111823.458705",
         "rate_limit_status": 99,
-        "rate_limit_reset_ms": 1575111823448987,
+        "rate_limit_reset_ms": 1575111823448,
         "rate_limit": 100
     }
 
@@ -571,7 +571,7 @@ https://api.bybit.com
         },
         "time_now": "1575112681.814760",
         "rate_limit_status": 99,
-        "rate_limit_reset_ms": 1575112681807671,
+        "rate_limit_reset_ms": 1575112681807,
         "rate_limit": 100
     }
 
@@ -630,7 +630,7 @@ https://api.bybit.com
         ],
         "time_now": "1575110339.105675",
         "rate_limit_status": 98,
-        "rate_limit_reset_ms": 1575110339100545,
+        "rate_limit_reset_ms": 1575110339100,
         "rate_limit": 100
     }
 
@@ -976,7 +976,7 @@ https://api.bybit.com
         ],
         "time_now": "1575110997.668109",
         "rate_limit_status": 99,
-        "rate_limit_reset_ms": 1575110997643683,
+        "rate_limit_reset_ms": 1575110997643,
         "rate_limit": 100
     }
 
@@ -1077,7 +1077,7 @@ https://api.bybit.com
     },
     "time_now": "1576204515.018290",
     "rate_limit_status": 599,
-    "rate_limit_reset_ms": 1576204515014913,
+    "rate_limit_reset_ms": 1576204515014,
     "rate_limit": 600
 }
 
@@ -1282,7 +1282,7 @@ https://api.bybit.com
     },
     "time_now": "1576649493.869901",
     "rate_limit_status": 119,
-    "rate_limit_reset_ms": 1576649493866093,
+    "rate_limit_reset_ms": 1576649493866,
     "rate_limit": 120
 }
 
