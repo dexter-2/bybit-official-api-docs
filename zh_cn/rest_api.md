@@ -1657,7 +1657,7 @@ https://api.bybit.com
 
 |参数|必选|类型|说明|
 |:----- |:-------|:-----|----- |
-|coin |true |BTC,EOS,ERP,ETH,USDT |币种 |
+|coin |true |BTC,EOS,XRP,ETH,USDT |币种 |
 
 #### 返回示例
 

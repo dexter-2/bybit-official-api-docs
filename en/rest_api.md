@@ -1522,7 +1522,7 @@ https://api.bybit.com
 
 |parameter|required|type|comments|
 |:----- |:-------|:-----|----- |
-|coin |true |BTC,EOS,ERP,ETH,USDT |coin |
+|coin |true |BTC,EOS,XRP,ETH,USDT |coin |
 
 #### Response example
 
