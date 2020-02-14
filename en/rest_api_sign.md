@@ -1,3 +1,5 @@
+# NOTICE: These docs are now OBSOLETE; please find the new documentation [here](https://bybit-exchange.github.io/docs/inverse). Thank you.
+
 ## API Signature
 
 ### Getting Your API Key and Secret Key
@@ -53,11 +55,11 @@ Every request to the API returns the following fields:
          <td>1 / request</td>
       </tr>
 	    <tr>
-        <td>open-api/stop-order/list </td> 
+        <td>open-api/stop-order/list </td>
         <td>1 / request</td>
       </tr>
       <tr>
-        <td>v2/private/order </td> 
+        <td>v2/private/order </td>
         <td>1 / request</td>
       </tr>
       <tr>
@@ -71,11 +73,11 @@ Every request to the API returns the following fields:
          <td>1 / request</td>
       </tr>
       <tr>
-        <td>position/change-position-margin </td> 
+        <td>position/change-position-margin </td>
         <td>1 / request</td>
       </tr>
       <tr>
-        <td>position/trading-stop</td> 
+        <td>position/trading-stop</td>
         <td>1 / request</td>
       </tr>
       <tr>
@@ -84,7 +86,7 @@ Every request to the API returns the following fields:
          <td>1 / request</td>
       </tr>
       <tr>
-        <td>user/leverage</td> 
+        <td>user/leverage</td>
         <td>1 / request</td>
       </tr>
       <tr>

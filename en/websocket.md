@@ -1,3 +1,5 @@
+# NOTICE: These docs are now OBSOLETE; please find the new documentation [here](https://bybit-exchange.github.io/docs/inverse). Thank you.
+
 ### WebSocket Data
 ```
 // websocket server address

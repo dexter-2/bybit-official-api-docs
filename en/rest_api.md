@@ -1,3 +1,5 @@
+# NOTICE: These docs are now OBSOLETE; please find the new documentation [here](https://bybit-exchange.github.io/docs/inverse). Thank you.
+
 ### Base Endpoint
 
 * For testnet
@@ -1538,7 +1540,7 @@ https://api.bybit.com
             "equity": 1002,                         //equity = wallet_balance + unrealised_pnl
             "available_balance": 999.99987471,      //available_balance
             //In Isolated Margin Mode， available_balance = wallet_balance - (position_margin + occ_closing_fee + occ_funding_fee + order_margin)
-            //In Cross Margin Mode，if unrealised_pnl > 0, available_balance = wallet_balance - (position_margin + occ_closing_fee + occ_funding_fee + order_margin)；otherwise，available_balance = wallet_balance - (position_margin + occ_closing_fee + occ_funding_fee + order_margin) + unrealised_pnl 
+            //In Cross Margin Mode，if unrealised_pnl > 0, available_balance = wallet_balance - (position_margin + occ_closing_fee + occ_funding_fee + order_margin)；otherwise，available_balance = wallet_balance - (position_margin + occ_closing_fee + occ_funding_fee + order_margin) + unrealised_pnl
             "used_margin": 0.00012529,              //used_margin = wallet_balance - available_balance
             "order_margin": 0.00012529,             //Used margin by order
             "position_margin": 0,                   //position margin

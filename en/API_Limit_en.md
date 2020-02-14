@@ -1,5 +1,7 @@
+# NOTICE: These docs are now OBSOLETE; please find the new documentation [here](https://bybit-exchange.github.io/docs/inverse). Thank you.
+
 # Introduction
-Bybit use `Order Fill Ratio (OFR)`, `Liquidity Contribution Points (LCP)` to measure customers' contribution to our executable liquidity. 
+Bybit use `Order Fill Ratio (OFR)`, `Liquidity Contribution Points (LCP)` to measure customers' contribution to our executable liquidity.
 
 
 The `LCP` and `OFR` of different symbols are calculated separately.
@@ -7,7 +9,7 @@ The `LCP` and `OFR` of different symbols are calculated separately.
 # Order Fill Ratio (OFR) Threshold
 If you place more than `2000` orders per day on bybit, please maintain your 7-day OFR above a `Minimum OFR threshold`, or bybit may reduce your api request frequency limit.
 
-## Order Fill Ratio (OFR) 
+## Order Fill Ratio (OFR)
 > `Order Fill Ratio (OFR)` : the proportion of orders filled per orders submitted to bybit.
 
 > `Orders Submitted to bybit`: Any order sent to bybit.
@@ -69,7 +71,7 @@ Your API request frequency limit is based on your min `Liquidity Contribution Po
 ## Explanation
 ### Effective Price Range
 
-> `effective price range`: 6 tick sizes range around middle of best bid price and best ask price. 
+> `effective price range`: 6 tick sizes range around middle of best bid price and best ask price.
 
 > Min `effective price` is  (Best bid price + Best ask price) / 2 - (3 * tick_size)
 
@@ -100,7 +102,7 @@ POU = 8000 / 10000 = 0.8
 
 
 #### POA
-> `POA`: the proportion of your orders within `effective price range` to all orders within `effective price range` in orderbook. 
+> `POA`: the proportion of your orders within `effective price range` to all orders within `effective price range` in orderbook.
 
 Bybit calculates your amount of orders within `effective price range` / amount of all orders within `effective price range` in orderbook, and then performs a 1-Day Time-Weighted-Average over the series of seconds rates.
 
@@ -115,4 +117,3 @@ POA = 8000 / 200000 = 0.04
 
 
 Prior notice will be given via website if we update the mechanism.
-
